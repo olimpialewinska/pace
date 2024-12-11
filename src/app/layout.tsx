@@ -34,7 +34,9 @@ export default function RootLayout({
           <ScrollArea className="h-dvh">
             <NextTopLoader showSpinner={false} color="hsl(var(--primary))" />
             <TopBar />
-            <div className="p-2">{children}</div>
+            <div className="flex w-full items-center justify-center">
+              <div className="w-full max-w-screen-3xl p-2">{children}</div>
+            </div>
           </ScrollArea>
         </ThemeProvider>
       </body>

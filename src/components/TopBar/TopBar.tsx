@@ -6,6 +6,11 @@ import { Button } from "../ui/Button";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "../ui/NavigationMenu";
 import BurgerMenu from "./BurgerMenu";
 
+export interface NavItem {
+  name: string;
+  href: string;
+}
+
 const TopBar: FC = () => {
   const navLinks = [
     { name: "Solutions", href: URLS.SOLUTIONS },
@@ -44,7 +49,7 @@ const TopBar: FC = () => {
             </NavigationMenuItem>
           ))}
         </NavigationMenuList>
-        <BurgerMenu />
+        <BurgerMenu authLinks={authLinks} navLinks={navLinks} />
       </NavigationMenu>
     </div>
   );
