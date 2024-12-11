@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import { ThemeProvider } from "@/providers/ThemeProvider";
-import TopBar from "@/components/TopBar/TopBar";
+import TopBar from "@/components/TopBar";
 import { ScrollArea } from "@/components/ui/ScrollArea";
 import "./globals.css";
 

@@ -2,6 +2,7 @@
 
 import { FC, useState } from "react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { Button } from "../ui/Button";
 import { Separator } from "../ui/Separator";
 import { NavItem } from "./TopBar";
@@ -49,19 +50,25 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ authLinks, navLinks }) => {
           <div className="flex h-full flex-col items-center gap-3">
             {navLinks.map((link, id) => (
               <div className="flex w-full flex-col items-center gap-2" key={link.href}>
-                <Button key={link.name} variant="link">
-                  {link.name}
+                <Button key={link.name} variant="link" asChild>
+                  <Link href={link.href} passHref>
+                    {link.name}
+                  </Link>
                 </Button>
                 <Separator className={cn("bg-white/20", id === navLinks.length - 1 && "hidden")} />
               </div>
             ))}
             <div className="mt-auto flex w-full flex-row justify-between">
-              <Button variant="link" className="mx-auto">
-                {authLinks[0].name}
+              <Button variant="link" className="mx-auto" asChild>
+                <Link href={authLinks[0].href} passHref>
+                  {authLinks[0].name}
+                </Link>
               </Button>
               <Separator className="h-8 bg-white/20" orientation="vertical" />
-              <Button variant="link" className="mx-auto">
-                {authLinks[1].name}
+              <Button variant="link" className="mx-auto" asChild>
+                <Link href={authLinks[1].href} passHref>
+                  {authLinks[1].name}
+                </Link>
               </Button>
             </div>
           </div>

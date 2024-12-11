@@ -1,9 +1,9 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@ui/Button";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@ui/NavigationMenu";
 import { URLS } from "@/constants/urls";
-import { Button } from "../ui/Button";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "../ui/NavigationMenu";
 import BurgerMenu from "./BurgerMenu";
 
 export interface NavItem {
@@ -31,21 +31,25 @@ const TopBar: FC = () => {
         <Link href="/">
           <Image src="/logo.png" alt="Logo" width={34} height={34} />
         </Link>
-        <NavigationMenuList className="hidden md:flex">
+        <NavigationMenuList className="mx-auto hidden md:flex">
           {navLinks.map(link => (
             <NavigationMenuItem key={link.name}>
-              <Link href={link.href} passHref>
-                <Button variant="link">{link.name}</Button>
-              </Link>
+              <Button variant="link" className="md:px-2 lg:px-4" asChild>
+                <Link href={link.href} passHref>
+                  {link.name}
+                </Link>
+              </Button>
             </NavigationMenuItem>
           ))}
         </NavigationMenuList>
         <NavigationMenuList className="hidden md:flex">
           {authLinks.map(link => (
             <NavigationMenuItem key={link.name}>
-              <Link href={link.href} passHref>
-                <Button variant="link">{link.name}</Button>
-              </Link>
+              <Button variant="link" className="md:px-2 lg:px-4" asChild>
+                <Link href={link.href} passHref>
+                  {link.name}
+                </Link>
+              </Button>
             </NavigationMenuItem>
           ))}
         </NavigationMenuList>

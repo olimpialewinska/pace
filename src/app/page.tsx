@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/Button";
+import Home from "@/views/Home";
 
-export default function Home() {
-  return <Button>Button</Button>;
+export default function Page() {
+  return <Home />;
 }
