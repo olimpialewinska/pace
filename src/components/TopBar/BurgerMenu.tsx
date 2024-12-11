@@ -3,8 +3,8 @@
 import { FC, useState } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Button } from "../ui/Button";
-import { Separator } from "../ui/Separator";
+import { Button } from "@ui/Button";
+import { Separator } from "@ui/Separator";
 import { NavItem } from "./TopBar";
 
 interface BurgerMenuProps {
